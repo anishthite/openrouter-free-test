@@ -145,8 +145,9 @@ def main():
         selftest()
         return
     runs = int(next((a for a in sys.argv[1:] if a.isdigit()), 2))
+    models = sys.argv[sys.argv.index("-m") + 1].split(",") if "-m" in sys.argv else MODELS
     rows = []
-    for model in MODELS:
+    for model in models:
         for pid, prompt, check in PROMPTS:
             for r in range(runs):
                 res = run_call(model, prompt)
@@ -171,7 +172,7 @@ def main():
 
     print("\n== summary (medians over successful calls) ==")
     print(f"{'model':32} {'pass%':>6} {'ttft_s':>8} {'total_s':>8} {'tok/s':>7} {'errors':>6}")
-    for m in MODELS:
+    for m in models:
         mine = [r for r in rows if r["model"] == m]
         good = [r for r in mine if not r["error"]]
         errs = len(mine) - len(good)

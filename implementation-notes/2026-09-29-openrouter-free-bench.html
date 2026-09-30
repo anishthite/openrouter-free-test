@@ -16,6 +16,7 @@ code{background:#f4f4f4;padding:0 3px}</style></head><body>
 <tr><td>A-2</td><td>exec() of generated code accepted — local eval of known models on the author's machine.</td></tr>
 <tr><td>R-1</td><td>Fully reversible: delete bench.py + results.csv, nothing else touched.</td></tr>
 <tr><td>L-1</td><td>If free tier looks promising, next step is a paid baseline row (e.g. gpt-4o-mini) in the same table for an opportunity-cost read.</td></tr>
-<tr><td>L-2</td><td>2026-09-29 results: nemotron-3-ultra 100% pass / 1.6s TTFT / 0 errors; qwen 100% when up but 7/12 calls 429; gemma fully 429-blocked. Verdict: viable, but per-model rate limits are the real constraint — a production loop needs model fallback. Full data in <code>results.csv</code>.</td></tr>
+<tr><td>L-2</td><td>2026-09-29 results: nemotron-3-ultra 100% pass / 1.6s TTFT / 0 errors; qwen 100% when up but 7/12 calls 429; gemma fully 429-blocked. <code>openrouter/free</code> (the $0 router) then went 12/12 with zero 429s — routing around per-model rate limits is its whole value. Verdict: use <code>openrouter/free</code> as default; pin specific :free IDs only for determinism. Full data in <code>results.csv</code>.</td></tr>
+<tr><td>D-5</td><td>Added <code>-m model,list</code> CLI flag after MODELS churned twice; beats editing source each catalog rotation. Note: results.csv is overwritten per run — cp before custom runs (learned the hard way, one rerun).</td></tr>
 </table>
 </body></html>
