@@ -1,0 +1,21 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>openrouter free-tier bench</title>
+<style>body{font:14px/1.5 system-ui;max-width:60em;margin:2em auto;padding:0 1em}
+table{border-collapse:collapse}td,th{border:1px solid #ccc;padding:2px 8px;text-align:left;vertical-align:top}
+code{background:#f4f4f4;padding:0 3px}</style></head><body>
+<h1>OpenRouter free-tier benchmark — 2026-09-29</h1>
+<p>Scope: one-file stdlib benchmark (<code>bench.py</code>) to decide whether OpenRouter free models are worth using. Criteria: quality + speed (user-confirmed). Free tier only. Key via env or <code>.env</code>.</p>
+<table>
+<tr><th>ID</th><th>Entry</th></tr>
+<tr><td>D-1</td><td>Stdlib only (urllib + SSE parsing by hand). No openai/requests deps — keeps the test about the service, not a client lib.</td></tr>
+<tr><td>D-2</td><td>Streaming requests to get TTFT, not just total latency. <code>usage:{include:true}</code> for real token counts.</td></tr>
+<tr><td>D-3</td><td>6 prompts, all auto-scored (exact match / regex / json.loads / exec of generated is_prime). No judge LLM — deterministic checks, zero cost, reproducible.</td></tr>
+<tr><td>D-4</td><td>Original 5 model IDs all 404'd (free catalog churns). Replaced via live <code>/api/v1/models</code> query: nemotron-3-ultra-550b, nemotron-3-super-120b, gemma-4-31b, qwen3.8-27b, laguna-s-2.1.</td></tr>
+<tr><td>T-1</td><td>Median-of-2-runs summary, not proper stats. Free tier queues hard; rerun with <code>python3 bench.py 5</code> if numbers look noisy.</td></tr>
+<tr><td>A-1</td><td>Free model IDs are what existed at write time; stale IDs surface as HTTP error rows, not crashes. Edit <code>MODELS</code> to refresh.</td></tr>
+<tr><td>A-2</td><td>exec() of generated code accepted — local eval of known models on the author's machine.</td></tr>
+<tr><td>R-1</td><td>Fully reversible: delete bench.py + results.csv, nothing else touched.</td></tr>
+<tr><td>L-1</td><td>If free tier looks promising, next step is a paid baseline row (e.g. gpt-4o-mini) in the same table for an opportunity-cost read.</td></tr>
+<tr><td>L-2</td><td>2026-09-29 results: nemotron-3-ultra 100% pass / 1.6s TTFT / 0 errors; qwen 100% when up but 7/12 calls 429; gemma fully 429-blocked. Verdict: viable, but per-model rate limits are the real constraint — a production loop needs model fallback. Full data in <code>results.csv</code>.</td></tr>
+</table>
+</body></html>

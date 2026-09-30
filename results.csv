@@ -1,0 +1,61 @@
+model,prompt,run,ttft_s,total_s,ctoks,tok_s,pass,error
+nvidia/nemotron-3-ultra-550b-a55b:free,qa,0,0.65,0.65,22,33.6,1,
+nvidia/nemotron-3-ultra-550b-a55b:free,qa,1,1.29,1.55,22,14.2,1,
+nvidia/nemotron-3-ultra-550b-a55b:free,math,0,0.97,0.99,52,52.7,1,
+nvidia/nemotron-3-ultra-550b-a55b:free,math,1,1.57,1.58,40,25.3,1,
+nvidia/nemotron-3-ultra-550b-a55b:free,reason,0,1.77,1.77,142,80.0,1,
+nvidia/nemotron-3-ultra-550b-a55b:free,reason,1,4.57,4.57,138,30.2,1,
+nvidia/nemotron-3-ultra-550b-a55b:free,json,0,0.97,1.02,59,57.8,1,
+nvidia/nemotron-3-ultra-550b-a55b:free,json,1,9.70,9.85,92,9.3,1,
+nvidia/nemotron-3-ultra-550b-a55b:free,code,0,1.25,3.39,132,39.0,1,
+nvidia/nemotron-3-ultra-550b-a55b:free,code,1,1.14,2.04,153,75.2,1,
+nvidia/nemotron-3-ultra-550b-a55b:free,summary,0,2.63,2.85,107,37.5,1,
+nvidia/nemotron-3-ultra-550b-a55b:free,summary,1,2.83,3.66,92,25.2,1,
+nvidia/nemotron-3-super-120b-a12b:free,qa,0,0.73,0.73,38,52.1,1,
+nvidia/nemotron-3-super-120b-a12b:free,qa,1,0.59,0.59,39,65.9,1,
+nvidia/nemotron-3-super-120b-a12b:free,math,0,2.60,2.62,70,26.8,1,
+nvidia/nemotron-3-super-120b-a12b:free,math,1,0.39,0.39,1,2.5,0,
+nvidia/nemotron-3-super-120b-a12b:free,reason,0,2.52,2.53,110,43.4,1,
+nvidia/nemotron-3-super-120b-a12b:free,reason,1,1.08,1.21,113,93.4,1,
+nvidia/nemotron-3-super-120b-a12b:free,json,0,3.68,3.68,50,13.6,1,
+nvidia/nemotron-3-super-120b-a12b:free,json,1,1.20,1.46,50,34.2,1,
+nvidia/nemotron-3-super-120b-a12b:free,code,0,2.66,4.11,176,42.8,1,
+nvidia/nemotron-3-super-120b-a12b:free,code,1,0.22,0.22,1,4.6,0,
+nvidia/nemotron-3-super-120b-a12b:free,summary,0,1.95,2.03,67,33.0,1,
+nvidia/nemotron-3-super-120b-a12b:free,summary,1,1.14,1.42,98,68.9,1,
+google/gemma-4-31b-it:free,qa,0,,,,,,HTTP 429
+google/gemma-4-31b-it:free,qa,1,,,,,,HTTP 429
+google/gemma-4-31b-it:free,math,0,,,,,,HTTP 429
+google/gemma-4-31b-it:free,math,1,,,,,,HTTP 429
+google/gemma-4-31b-it:free,reason,0,,,,,,HTTP 429
+google/gemma-4-31b-it:free,reason,1,,,,,,HTTP 429
+google/gemma-4-31b-it:free,json,0,,,,,,HTTP 429
+google/gemma-4-31b-it:free,json,1,,,,,,HTTP 429
+google/gemma-4-31b-it:free,code,0,,,,,,HTTP 429
+google/gemma-4-31b-it:free,code,1,,,,,,HTTP 429
+google/gemma-4-31b-it:free,summary,0,,,,,,HTTP 429
+google/gemma-4-31b-it:free,summary,1,,,,,,HTTP 429
+qwen/qwen3.8-27b:free,qa,0,0.73,0.77,39,50.5,1,
+qwen/qwen3.8-27b:free,qa,1,,,,,,HTTP 429
+qwen/qwen3.8-27b:free,math,0,,,,,,HTTP 429
+qwen/qwen3.8-27b:free,math,1,,,,,,HTTP 429
+qwen/qwen3.8-27b:free,reason,0,,,,,,HTTP 429
+qwen/qwen3.8-27b:free,reason,1,,,,,,HTTP 429
+qwen/qwen3.8-27b:free,json,0,1.63,1.72,59,34.3,1,
+qwen/qwen3.8-27b:free,json,1,,,,,,HTTP 429
+qwen/qwen3.8-27b:free,code,0,1.99,4.13,197,47.7,1,
+qwen/qwen3.8-27b:free,code,1,1.77,35.39,197,5.6,1,
+qwen/qwen3.8-27b:free,summary,0,0.86,1.07,72,67.3,1,
+qwen/qwen3.8-27b:free,summary,1,,,,,,HTTP 429
+poolside/laguna-s-2.1:free,qa,0,0.73,0.79,2,2.5,1,
+poolside/laguna-s-2.1:free,qa,1,1.07,1.11,2,1.8,1,
+poolside/laguna-s-2.1:free,math,0,1.59,1.73,12,6.9,1,
+poolside/laguna-s-2.1:free,math,1,19.72,19.74,931,47.2,1,
+poolside/laguna-s-2.1:free,reason,0,6.84,6.86,234,34.1,1,
+poolside/laguna-s-2.1:free,reason,1,8.69,8.69,471,54.2,1,
+poolside/laguna-s-2.1:free,json,0,0.85,1.16,8,6.9,1,
+poolside/laguna-s-2.1:free,json,1,0.51,0.61,8,13.2,1,
+poolside/laguna-s-2.1:free,code,0,0.64,7.99,268,33.5,1,
+poolside/laguna-s-2.1:free,code,1,41.58,43.09,1815,42.1,1,
+poolside/laguna-s-2.1:free,summary,0,11.94,12.30,607,49.3,1,
+poolside/laguna-s-2.1:free,summary,1,10.38,11.19,455,40.6,1,
